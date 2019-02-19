@@ -1,3 +1,15 @@
-module.exports.add = (a, b) => a + b;
+add = (a, b) => a + b;
 
-module.exports.square = x => x * x;
+square = x => x * x;
+
+setName = (user, fullName) => {
+  const nameParts = fullName.split(' ');
+  user.firstName = nameParts[0];
+  user.lastName = nameParts[1];
+};
+
+module.exports = {
+  add,
+  square,
+  setName
+};

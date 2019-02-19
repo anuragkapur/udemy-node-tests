@@ -17,3 +17,21 @@ it('should square number', () => {
     throw new Error(`Expected 121, but got ${res}`);
   }
 });
+
+it('should set firstName and lastName  with right values', () => {
+  const user = {
+    age: 18,
+    location: 'London'
+  };
+
+  utils.setName(user, 'Anurag Kapur');
+  expect(user).toContainKey('firstName').toContainKey('lastName');
+  expect(user.firstName).toBe('Anurag');
+  expect(user.lastName).toBe('Kapur');
+
+  // alternate way of writing the assertions
+  expect(user).toInclude({
+    firstName: 'Anurag',
+    lastName: 'Kapur'
+  })
+});

@@ -35,3 +35,10 @@ it('should set firstName and lastName  with right values', () => {
     lastName: 'Kapur'
   })
 });
+
+it('should square the number asynchronously', (done) => {
+  utils.asyncSquare(3, (result) => {
+    expect(result).toBe(9).toBeA('number');
+    done();
+  })
+});

@@ -3,7 +3,7 @@ const request = require('supertest');
 const app = require('./server').app;
 
 describe('Server', () => {
-  describe('#Get Users', () => {
+  describe('GET /users', () => {
     it('should get users and the response should contain expected user in users array', (done) => {
       request(app)
         .get('/users')
